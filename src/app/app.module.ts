@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { SelectRatingComponent } from './components/select-rating/select-rating.component';
+import { ShowAverageComponent } from './components/show-average/show-average.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SelectRatingComponent,
+    ShowAverageComponent
   ],
   imports: [
     BrowserModule
