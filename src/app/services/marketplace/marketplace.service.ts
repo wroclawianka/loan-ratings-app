@@ -15,18 +15,18 @@ export class MarketplaceService {
     private http : HttpClient) {}
 
     getLoans(rating : string, fieldsList : string[]) : Observable<Loan[]> {
-      let fieldsRequest = this.setFields(fieldsList);
-      let raitingFilter = this.setRaitingFilter(rating);
+      let fieldsRequest = this.createFields(fieldsList);
+      let raitingFilter = this.createRaitingFilter(rating);
       let url = `${this.marketplaceUrl}${fieldsRequest}${raitingFilter}`;
       
       return this.http.get<Loan[]>(url);
     }
 
-    setFields(fieldsList : string[]){
+    createFields(fieldsList : string[]){
       return (fieldsList.length > 0) ? `?fields=${fieldsList.join(",")}` : "";
     }
 
-    setRaitingFilter(rating : string){
+    createRaitingFilter(rating : string){
       return (rating.length > 0) ? `&rating__in=${rating}` : "";
     }
 }
