@@ -27,6 +27,6 @@ export class MarketplaceService {
     }
 
     createRaitingFilter(rating : string){
-      return (rating.length > 0) ? `&rating__in=${rating}` : "";
+      return (rating.length > 0) ? `&rating__in=%5B"${rating}"%5D` : "";
     }
 }
