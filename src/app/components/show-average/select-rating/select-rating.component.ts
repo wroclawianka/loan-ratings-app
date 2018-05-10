@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Rating } from '../../../models/rating.model';
 
 @Component({
   selector: 'app-select-rating',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-rating.component.css']
 })
 export class SelectRatingComponent implements OnInit {
+  @Input() ratings : Array<Rating>;
+  @Output() ratingEvent = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectRating(rating : string) {
+      this.ratingEvent.emit(rating);
   }
 
 }
