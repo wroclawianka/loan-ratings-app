@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MarketplaceService } from '../../services/marketplace/marketplace.service'
+
 @Component({
   selector: 'app-show-average',
   templateUrl: './show-average.component.html',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowAverageComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private loanService: MarketplaceService) {}
+  
   ngOnInit() {
   }
-
 }
