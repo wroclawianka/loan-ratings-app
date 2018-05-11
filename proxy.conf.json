@@ -1,0 +1,11 @@
+{
+    "/api/": {
+        "target": "https://api.zonky.cz/",
+        "secure": false,
+        "pathRewrite": {
+            "^/api": ""
+        },
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
