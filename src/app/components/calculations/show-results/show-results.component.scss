@@ -1,0 +1,16 @@
+@import '../../../../styles/_variables.scss';
+
+.results {
+    min-height: 50px;
+    font-size: 1.3em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    .result__label{
+        text-align: left;
+    }
+    .result__amount{
+        text-align: right;
+        font-weight: 745;
+    }
+}

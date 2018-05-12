@@ -1,0 +1,24 @@
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_colors.scss';
+
+.items {
+    display: grid;
+    grid-gap: 2*$grid-gap;
+    grid-template-columns: repeat(auto-fit, 350px);
+    justify-content: space-around;
+    .item {
+        box-shadow: $box-shadow;
+        background: $white;
+        padding: $padding_default;
+        display: grid;
+        grid-gap: $grid-gap;
+        align-self: center;
+        height: 100%;
+        .item__image {
+            width: 100%;
+        }
+        .item__desc {
+            text-align: justify;
+        }
+    }
+}

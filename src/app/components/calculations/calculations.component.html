@@ -1,0 +1,6 @@
+<div class="calculations">
+  <app-select-rating [ratings]="ratings" (ratingEvent)="getLoans($event)"></app-select-rating>
+  <div class="results">
+    <app-show-results *ngIf="results" [results]="results"></app-show-results>
+  </div>
+</div>

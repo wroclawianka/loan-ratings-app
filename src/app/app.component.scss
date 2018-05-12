@@ -1,0 +1,13 @@
+@import '../styles/_variables.scss';
+@import '../styles/_colors.scss';
+
+// main
+.main-container {
+    background: $background;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.title{
+    font-size: 3.5em;
+}
