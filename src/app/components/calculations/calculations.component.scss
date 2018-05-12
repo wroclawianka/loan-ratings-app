@@ -1,0 +1,12 @@
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_colors.scss';
+
+.calculations{
+    display: grid;
+    grid-gap: $grid-gap;
+    align-items: center;
+    justify-content: center;
+    .results{
+        min-height: 50px;
+    }
+}

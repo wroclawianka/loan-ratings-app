@@ -1,0 +1,12 @@
+@import '../../../../styles/_variables.scss';
+
+.select-rating {
+    text-align: center;
+    padding-top: 10px;
+    display: inline-block;
+    button:focus { 
+        outline:0;
+        color:#ffffff;
+        background-color: #666666;
+    }
+}

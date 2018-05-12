@@ -1,0 +1,11 @@
+<div class="select-rating">
+    <div class="rating-buttons btn-group btn-group-toggle" data-toggle="buttons">
+        <button 
+        *ngFor="let rating of ratings" 
+        type="button" 
+        class="btn-rating btn btn-secondary btn-lg"
+        (click)=selectRating(rating)>
+        {{ rating.label }}
+    </button>
+</div>
+</div>
