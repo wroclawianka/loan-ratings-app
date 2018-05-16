@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../../environments/environment';
 import { Loan } from '../../models/loan.model'
@@ -14,19 +14,13 @@ export class MarketplaceService {
   constructor(
     private http : HttpClient) {}
 
-    getLoans(rating : string, fieldsList : string[]) : Observable<Loan[]> {
-      let fieldsRequest = this.createFields(fieldsList);
-      let raitingFilter = this.createRaitingFilter(rating);
-      let url = `${this.marketplaceUrl}${fieldsRequest}${raitingFilter}`;
+    getLoans(rating : string, fieldsList : string[]) : Observable<Loan[]> {    
+      const options = { 
+        params : new HttpParams()
+        .set('rating__in', `["${rating}"]`)
+        .set('fields', `${fieldsList.join(",")}`),
+       } ;
       
-      return this.http.get<Loan[]>(url);
-    }
-
-    createFields(fieldsList : string[]){
-      return (fieldsList.length > 0) ? `?fields=${fieldsList.join(",")}` : "";
-    }
-
-    createRaitingFilter(rating : string){
-      return (rating.length > 0) ? `&rating__in=%5B"${rating}"%5D` : "";
+      return this.http.get<Loan[]>(this.marketplaceUrl, options);
     }
 }
