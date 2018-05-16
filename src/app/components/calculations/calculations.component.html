@@ -1,5 +1,5 @@
 <div class="calculations">
-  <app-select-rating [ratings]="ratings" (ratingEvent)="getLoans($event)"></app-select-rating>
+  <app-select-rating [ratings]="ratings" (ratingEvent)="getLoansAmount($event)"></app-select-rating>
   <div class="results">
     <app-show-results *ngIf="results" [results]="results"></app-show-results>
   </div>

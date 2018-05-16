@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import { catchError } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Loan } from '../../models/loan.model'
 
@@ -14,19 +16,40 @@ export class MarketplaceService {
   constructor(
     private http : HttpClient) {}
 
-    getLoans(rating : string, fieldsList : string[]) : Observable<Loan[]> {
-      let fieldsRequest = this.createFields(fieldsList);
-      let raitingFilter = this.createRaitingFilter(rating);
-      let url = `${this.marketplaceUrl}${fieldsRequest}${raitingFilter}`;
+    getLoans(rating : string, fields : string[], loansAmount : string) : Observable<Loan[]> { 
+      let params = new HttpParams()
+      .set('rating__in', `["${rating}"]`)
+      .set('fields', `${fields.join(",")}`);
+
+      let headers = new HttpHeaders()
+      .set("X-Page", "0")
+      .set("X-Size", "loansAmount");
+
+      const options = { 
+        params : params,
+        headers: headers
+       } ;
       
-      return this.http.get<Loan[]>(url);
+      return this.http.get<Loan[]>(this.marketplaceUrl, options)
+      .pipe(catchError(this.handleError));
     }
 
-    createFields(fieldsList : string[]){
-      return (fieldsList.length > 0) ? `?fields=${fieldsList.join(",")}` : "";
+    getLoansAmount() {
+      return this.http.get(this.marketplaceUrl, { observe: 'response' })
+      .pipe(catchError(this.handleError));
     }
 
-    createRaitingFilter(rating : string){
-      return (rating.length > 0) ? `&rating__in=%5B"${rating}"%5D` : "";
-    }
+    private handleError(error: HttpErrorResponse) {
+      if (error.error instanceof ErrorEvent) {
+        console.error('An error occurred:', error.error.message);
+      } else {
+
+        console.error(
+          `Backend returned code ${error.status}, ` +
+          `body was: ${error.error}`);
+      }
+
+      return Observable.throw(
+        'Unexpected error. Please try again later.');
+    };
 }
