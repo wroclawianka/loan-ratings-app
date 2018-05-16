@@ -24,13 +24,21 @@ export class CalculationsComponent {
 
   constructor(private marketplaceService: MarketplaceService) { }
 
-  getLoans(rating) {
+  getLoans(rating, loansAmount) {
     this.marketplaceService
-      .getLoans(rating.value, ["amount"])
+      .getLoans(rating.value, ["amount"], loansAmount)
       .subscribe((loans: Loan[]) => 
       this.results = {
         average: this.calculateAverage(loans)
       });
+  }
+
+  getLoansAmount(rating){
+    this.marketplaceService
+      .getLoansAmount()
+      .subscribe(response => 
+        this.getLoans(rating, response.headers.get('X-Total'))
+      );
   }
 
   calculateAverage(loans: Loan[]): number {
