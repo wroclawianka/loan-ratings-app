@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import { catchError } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Loan } from '../../models/loan.model'
 
@@ -28,10 +30,26 @@ export class MarketplaceService {
         headers: headers
        } ;
       
-      return this.http.get<Loan[]>(this.marketplaceUrl, options);
+      return this.http.get<Loan[]>(this.marketplaceUrl, options)
+      .pipe(catchError(this.handleError));
     }
 
     getLoansAmount() {
-      return this.http.get(this.marketplaceUrl, { observe: 'response' });
+      return this.http.get(this.marketplaceUrl, { observe: 'response' })
+      .pipe(catchError(this.handleError));
     }
+
+    private handleError(error: HttpErrorResponse) {
+      if (error.error instanceof ErrorEvent) {
+        console.error('An error occurred:', error.error.message);
+      } else {
+
+        console.error(
+          `Backend returned code ${error.status}, ` +
+          `body was: ${error.error}`);
+      }
+
+      return Observable.throw(
+        'Unexpected error. Please try again later.');
+    };
 }
