@@ -23,7 +23,7 @@ export class MarketplaceService {
 
       let headers = new HttpHeaders()
       .set("X-Page", "0")
-      .set("X-Size", "loansAmount");
+      .set("X-Size", loansAmount);
 
       const options = { 
         params : params,
