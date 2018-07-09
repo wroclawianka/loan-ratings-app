@@ -10,6 +10,9 @@ Marketplace data are taken from Zonky application and using their API.
 Due to the CORS mechanism, the development version uses proxy configuration which solves this problem on the local machine. 
 Please, treat production on GitHub Pages as a preview of the solution, where mock of the results are used. 
 
+<p align="center">
+    <img width="500px" src="https://github.com/wroclawianka/loan-ratings-app/blob/master/loan-ratings-app.png"/>
+ </p>
 
 ## Angular CLI info
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
