@@ -377,7 +377,7 @@ var ShowResultsComponent = /** @class */ (function () {
 /***/ "./src/app/components/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer\">\r\n    <div class=\"container\">\r\n      <span class=\"text-muted\">\r\n          All Rights Reserved | Design and code by <a href=\"http://dorotazelga.aspnet.pl/\">Dorota Zelga</a>\r\n      </span>\r\n    </div>\r\n  </footer>"
+module.exports = "<footer class=\"footer\">\r\n    <div class=\"container\">\r\n      <span class=\"text-muted\">\r\n          All Rights Reserved | Design and code by <a href=\"https://wroclawianka.github.io/portfolio/\">Dorota Zelga</a>\r\n          | <a href=\"https://github.com/wroclawianka/loan-ratings-app\">Repository</a>\r\n      </span>\r\n    </div>\r\n  </footer>"
 
 /***/ }),
 
@@ -427,7 +427,7 @@ var FooterComponent = /** @class */ (function () {
 /***/ "./src/app/components/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n        <div class=\"navbar-header\">\r\n            <a href=\"#\" class=\"navbar-brand\">\r\n                <i class=\"fas fa-ruler\"></i> Loan Rating App\r\n            </a>\r\n        </div>\r\n        <div class=\"collapse navbar-collapse\">\r\n            <ul class=\"nav navbar-nav navbar-right\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li><a href=\"#\">Ratings</a></li>\r\n                    <li><a href=\"#\">Loans</a></li>\r\n                    <li><a href=\"#\">About Us</a></li>\r\n                    <li><a href=\"#\">Career</a></li>\r\n                    <li><a href=\"#\">Contact</a></li>\r\n                </ul>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n        <div class=\"navbar-header\">\r\n            <a href=\"#\" class=\"navbar-brand\">\r\n                <i class=\"fas fa-ruler\"></i> Loan Rating App\r\n            </a>\r\n        </div>\r\n        <div class=\"collapse navbar-collapse\">\r\n            <ul class=\"nav navbar-nav navbar-right\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li><a href=\"https://wroclawianka.github.io/portfolio/\">About Me</a></li>\r\n                    <li><a href=\"https://github.com/wroclawianka/loan-ratings-app\">Repository</a></li>\r\n                </ul>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>"
 
 /***/ }),
 
