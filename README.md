@@ -14,6 +14,8 @@ Please, treat production on GitHub Pages as a preview of the solution, where moc
     <img width="500px" src="https://github.com/wroclawianka/loan-ratings-app/blob/master/loan-ratings-app.png"/>
  </p>
 
+## Getting started
+
 Preparation
 ```
 npm install
