@@ -14,11 +14,12 @@ Please, treat production on GitHub Pages as a preview of the solution, where moc
     <img width="500px" src="https://github.com/wroclawianka/loan-ratings-app/blob/master/loan-ratings-app.png"/>
  </p>
 
-## Angular CLI info
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
+Preparation
+```
+npm install
+```
 
-### Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-### Build
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run
+```
+npm start
+```
